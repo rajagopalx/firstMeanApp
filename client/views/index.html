@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>One Way Chat</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
+
+	<script type="text/javascript" src="/js/app.js"></script>
+
+	<script type="text/javascript" src="/js/controller/chat-controller.js"></script>
+</head>
+<body ng-app="chatApp" ng-controller="chatAppController">
+<h2>Welcome to one way chat room</h2>
+<p>No of Chats: {{chats.length}}</p>
+<p ng-repeat="chat in chats">
+	{{chat.message}}  by  {{chat.user}}
+</p>
+
+<form ng-submit="updateChat()">
+	<input type="text" placeholder="Enter Message" ng-model="newchat"/>
+	<input type="text" placeholder="Enter Name" ng-model="newname"/>
+	<button type="submit">Send</button>
+</form>
+</body>
+</html>
